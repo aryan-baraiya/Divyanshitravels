@@ -1,0 +1,179 @@
+.services-section {
+  background-color: var(--color-bg);
+  padding: var(--space-xl) var(--space-sm);
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-main-title {
+  margin-top: 0.5rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 1rem;
+}
+
+/* Service Card Design */
+.service-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-normal);
+  border: 1px solid var(--color-border);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(232, 86, 42, 0.2);
+}
+
+/* Image styling inside card */
+.service-img-wrapper {
+  position: relative;
+  height: var(--card-img-height);
+  overflow: hidden;
+}
+
+.service-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.service-card:hover .service-card-img {
+  transform: scale(1.08);
+}
+
+/* Floating labels on images */
+.service-badge {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.78);
+  color: var(--color-white);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--border-radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.service-badge.institutional {
+  background-color: rgba(0, 0, 0, 0.86);
+}
+
+/* Card Content Details */
+.service-info-wrapper {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.service-info-wrapper h3 {
+  font-family: var(--font-body);
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.service-description-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Check list of offerings */
+.service-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 2.5rem;
+  margin-top: auto; /* Push lists and buttons to align card bottoms */
+}
+
+.service-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.check-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.service-features span {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+/* Plan Button */
+.service-btn {
+  display: block;
+  text-align: center;
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 0.9rem 1.5rem;
+  border-radius: var(--border-radius-full);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition-normal);
+  margin-top: auto;
+}
+
+.service-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Desktop and tablet alignments */
+@media screen and (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .service-img-wrapper {
+    height: var(--card-img-height-desktop);
+  }
+
+  .service-card:last-child {
+    grid-column: 2 / span 1;
+  }
+}

@@ -1,0 +1,201 @@
+.about-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg);
+  color: #ffffff;
+  padding: 0;
+}
+
+.travel-promo-section {
+  min-height: 78vh;
+}
+
+.travel-promo-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 45%, rgba(0, 0, 0, 0.08), transparent 35%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.72) 35%, rgba(0, 0, 0, 0.22) 70%, rgba(0, 0, 0, 0.08) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.18));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.travel-promo-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/school_bus_transit.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.42) saturate(0.95);
+  transform: scale(1.02);
+  z-index: 0;
+}
+
+.travel-promo-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 78vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.travel-promo-content {
+  width: min(100%, 640px);
+}
+
+.travel-promo-kicker {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.travel-promo-title {
+  margin: 0;
+  font-family: 'Antonio', var(--font-body);
+  font-size: clamp(3rem, 6.4vw, 5.35rem);
+  line-height: 0.86;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-wrap: balance;
+  max-width: 9.5ch;
+  font-weight: 700;
+}
+
+.travel-promo-copy {
+  margin: 1.25rem 0 0;
+  max-width: 31rem;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.travel-promo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.travel-promo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.4rem;
+  padding: 0.95rem 1.5rem;
+  border-radius: 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: var(--transition-fast);
+}
+
+.travel-promo-btn-primary {
+  background: #ffffff;
+  color: #1A1A1A;
+  box-shadow: 0 14px 30px rgba(255, 255, 255, 0.15);
+}
+
+.travel-promo-btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.travel-promo-btn-secondary {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(2px);
+}
+
+.travel-promo-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.travel-promo-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.travel-promo-frame {
+  width: min(100%, 680px);
+  margin-left: auto;
+  margin-right: -2rem;
+}
+
+.travel-promo-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.4));
+}
+
+@media screen and (min-width: 992px) {
+  .travel-promo-container {
+    grid-template-columns: 1.06fr 0.94fr;
+    gap: 1rem;
+    padding: clamp(2rem, 4vw, 4rem);
+  }
+
+  .travel-promo-content {
+    padding-left: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .travel-promo-section {
+    min-height: auto;
+  }
+
+  .travel-promo-container {
+    min-height: auto;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .travel-promo-visual {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .travel-promo-frame {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .travel-promo-container {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .travel-promo-title {
+    font-size: clamp(2.8rem, 15vw, 4.1rem);
+  }
+
+  .travel-promo-copy {
+    font-size: 0.98rem;
+  }
+
+  .travel-promo-btn {
+    width: 100%;
+  }
+}

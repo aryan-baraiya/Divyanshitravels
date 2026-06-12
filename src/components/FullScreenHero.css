@@ -1,0 +1,75 @@
+.fullscreen-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: #171717;
+  color: #fff;
+  padding-top: 3.8rem;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/udaipur_hero.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  filter: brightness(0.08) saturate(0);
+  opacity: 0.08;
+  transform: scale(1.01);
+  transition: transform 20s linear;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.94);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 clamp(1rem, 3vw, 2.5rem);
+  text-align: center;
+  transform: translateY(-2.25rem);
+}
+
+.fs-hero-title {
+  margin: 0;
+  font-family: 'Bebas Neue', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 0.79;
+  text-transform: uppercase;
+  font-size: clamp(4.4rem, 10.6vw, 10.8rem);
+  word-break: break-word;
+  text-wrap: balance;
+}
+
+@keyframes bgSlowScale {
+  0% { transform: scale(1.02); }
+  100% { transform: scale(1.06); }
+}
+.hero-bg { animation: bgSlowScale 30s ease-in-out infinite alternate; }
+
+@media (max-width: 480px) {
+  .fullscreen-hero { padding-top: 3.25rem; }
+  .hero-content { padding: 0 1rem; }
+  .hero-content { transform: translateY(-0.9rem); }
+  .fs-hero-title { font-size: clamp(2.6rem, 11vw, 4.9rem); line-height: 0.9; letter-spacing: -1px; }
+}
+
+@media (min-width: 1440px) {
+  .hero-content { padding: 0 3rem; }
+  .fs-hero-title { font-size: 11rem; }
+}

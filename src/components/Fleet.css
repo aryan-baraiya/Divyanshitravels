@@ -1,0 +1,220 @@
+.fleet-section {
+  background-color: var(--color-bg);
+  padding: var(--space-xl) var(--space-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.fleet-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Category Tabs */
+.fleet-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.fleet-tab-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid var(--color-border);
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--border-radius-full);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: none;
+}
+
+.fleet-tab-btn:hover {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+  transform: translateY(-1px);
+}
+
+.fleet-tab-btn.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.08);
+}
+
+/* Fleet Grid */
+.fleet-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+/* Vehicle Card */
+.fleet-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  transition: var(--transition-normal);
+}
+
+.fleet-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(232, 86, 42, 0.15);
+}
+
+/* Image box */
+.fleet-img-box {
+  position: relative;
+  height: var(--card-img-height);
+  background-color: var(--color-bg-alt);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fleet-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.fleet-card:hover .fleet-img {
+  transform: scale(1.06);
+}
+
+.fleet-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--border-radius-full);
+}
+
+/* Content */
+.fleet-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.fleet-title {
+  font-family: var(--font-body);
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.fleet-description {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  height: 4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* Vehicle Specs */
+.fleet-specs {
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.spec-icon {
+  width: 18px;
+  height: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  flex-shrink: 0;
+}
+
+.spec-item span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+/* Footer of Card */
+.fleet-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.fleet-rate {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.fleet-inquire-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius-full);
+  transition: var(--transition-fast);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fleet-inquire-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+}
+
+/* Tablet Layout (2 columns) */
+@media screen and (min-width: 768px) {
+  .fleet-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop Layout (3 columns) */
+@media screen and (min-width: 992px) {
+  .fleet-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .fleet-img-box {
+    height: var(--card-img-height-desktop);
+  }
+}

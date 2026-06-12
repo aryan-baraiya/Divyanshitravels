@@ -1,0 +1,395 @@
+.inquiry-section {
+  background-color: var(--color-bg);
+  padding: var(--space-xl) var(--space-sm);
+}
+
+.inquiry-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.inquiry-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: flex-start;
+}
+
+/* Left Column: Direct Contacts */
+.inquiry-info-box {
+  text-align: left;
+}
+
+.inquiry-info-title {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.inquiry-info-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-bottom: 3rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.contact-icon {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.contact-text h4 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.15rem;
+}
+
+.contact-text p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+
+/* Pulsing Office Hours indicator */
+.inquiry-hours {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-bg-alt);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border);
+  width: fit-content;
+}
+
+.pulse-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #28a745; /* Success Green */
+  border-radius: 50%;
+  position: relative;
+}
+
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  animation: pulseDot 1.8s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.inquiry-hours p {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+/* Right Column: Inquiry Form Card */
+.inquiry-form-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+
+.form-box-title {
+  font-family: var(--font-body);
+  font-size: 1.65rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  font-weight: 700;
+}
+
+/* Tab buttons for Trip Type selection */
+.form-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  background-color: var(--color-bg-alt);
+  padding: 0.35rem;
+  border-radius: var(--border-radius-md);
+  margin-bottom: 2rem;
+}
+
+.form-tab-btn {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.6rem;
+  border-radius: var(--border-radius-sm);
+  color: var(--color-text-light);
+  text-align: center;
+  transition: var(--transition-fast);
+}
+
+.active-tab {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Form groups and rows */
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  text-align: left;
+}
+
+.form-group label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  transition: var(--transition-fast);
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+}
+
+.form-error-msg {
+  background-color: rgba(217, 83, 79, 0.08);
+  border: 1px solid #d9534f;
+  color: #d9534f;
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  text-align: left;
+  line-height: 1.5;
+}
+
+/* Submission action buttons (Strict Color Palette) */
+.form-actions-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.submit-email-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.submit-email-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 14px rgba(255, 255, 255, 0.08);
+}
+
+.submit-email-btn:disabled {
+  background-color: var(--color-text-light);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.form-action-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--color-text-light);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.form-action-divider::before,
+.form-action-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.form-action-divider span {
+  padding: 0 10px;
+}
+
+/* WhatsApp action button matching color palette constraints */
+.submit-whatsapp-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-secondary);
+  color: var(--color-accent);
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 10px rgba(26, 60, 94, 0.15);
+  text-align: center;
+}
+
+.submit-whatsapp-btn:hover {
+  background-color: #222222;
+  color: var(--color-white);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* Success layout styles */
+.form-success-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.success-icon {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.success-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.form-success-state h4 {
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.form-success-state p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+
+.reset-form-btn {
+  background-color: var(--color-secondary);
+  color: var(--color-accent);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-full);
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: var(--transition-fast);
+}
+
+.reset-form-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Responsive configurations */
+@media screen and (min-width: 768px) {
+  .inquiry-section {
+    padding: 7rem 2rem;
+  }
+  
+  .form-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .inquiry-grid {
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4.5rem;
+  }
+}
