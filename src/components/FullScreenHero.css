@@ -49,27 +49,161 @@
   color: #ffffff;
   font-weight: 900;
   letter-spacing: -2px;
-  line-height: 0.79;
+  line-height: 0.85;
   text-transform: uppercase;
-  font-size: clamp(4.4rem, 10.6vw, 10.8rem);
   word-break: break-word;
   text-wrap: balance;
 }
 
-@keyframes bgSlowScale {
-  0% { transform: scale(1.02); }
-  100% { transform: scale(1.06); }
+.fs-hero-discover {
+  display: block;
+  font-size: clamp(1.8rem, 5.8vw, 6.5rem);
+  letter-spacing: -1px;
+  opacity: 0;
+  line-height: 1;
+  animation: discoverFadeIn 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.3s;
 }
-.hero-bg { animation: bgSlowScale 30s ease-in-out infinite alternate; }
+
+.fs-hero-memories-wrapper {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: max-content;
+  max-width: 100%;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.fs-hero-memories {
+  display: block;
+  font-size: clamp(4.2rem, 14.5vw, 16rem);
+  letter-spacing: -3px;
+  line-height: 0.8;
+  padding-top: 0.75rem;
+  transform: scaleY(1.5);
+  transform-origin: top;
+  will-change: clip-path, transform;
+
+  /* Initial state: fully hidden before the animation begins */
+  clip-path: inset(0 0 0 100%);
+
+  /* 
+     REVEAL ANIMATION SPEED:
+     - The '1.8s' is the duration. To make the van go faster, decrease this number (e.g., to '1.2s').
+     - To make it slower, increase this number (e.g., to '2.5s').
+     - IMPORTANT: Keep this duration in sync with the .fs-hero-van animation duration.
+  */
+  animation: revealText 1.8s linear both;
+  animation-delay: 0.1s;
+  /* Starts immediately after DISCOVER line animation completes (0.3s + 0.3s = 0.6s) */
+}
+
+.fs-hero-van {
+  position: absolute;
+  bottom: -45%;
+  height: clamp(9.5rem, 21vw, 22rem);
+  width: auto;
+  pointer-events: none;
+  z-index: 10;
+  will-change: transform, left;
+
+  /* 
+     VAN DRIVE ANIMATION SPEED:
+     - The '1.8s' is the duration. To make the van go faster, decrease this number (e.g., to '1.2s').
+     - To make it slower, increase this number (e.g., to '2.5s').
+     - IMPORTANT: Keep this duration in sync with the .fs-hero-memories animation duration.
+  */
+  animation: driveVanAcross 1.8s linear both;
+  animation-delay: 0.1s;
+  /* Starts immediately after DISCOVER line animation completes (0.3s + 0.3s = 0.6s) */
+}
+
+@keyframes discoverFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealText {
+
+  0%,
+  36% {
+    clip-path: inset(0 0 0 100%);
+  }
+
+  64%,
+  100% {
+    clip-path: inset(0 0 0 0%);
+  }
+}
+
+@keyframes driveVanAcross {
+  0% {
+    left: 400%;
+    transform: translateX(0);
+  }
+
+  36% {
+    left: 100%;
+    transform: translateX(0);
+  }
+
+  64% {
+    left: 0%;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    left: -300%;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes bgSlowScale {
+  0% {
+    transform: scale(1.02);
+  }
+
+  100% {
+    transform: scale(1.06);
+  }
+}
+
+.hero-bg {
+  animation: bgSlowScale 30s ease-in-out infinite alternate;
+}
 
 @media (max-width: 480px) {
-  .fullscreen-hero { padding-top: 3.25rem; }
-  .hero-content { padding: 0 1rem; }
-  .hero-content { transform: translateY(-0.9rem); }
-  .fs-hero-title { font-size: clamp(2.6rem, 11vw, 4.9rem); line-height: 0.9; letter-spacing: -1px; }
+  .fullscreen-hero {
+    padding-top: 3.25rem;
+  }
+
+  .hero-content {
+    padding: 0 1rem;
+  }
+
+  .hero-content {
+    transform: translateY(-0.9rem);
+  }
+
+  .fs-hero-discover {
+    letter-spacing: -0.5px;
+  }
+
+  .fs-hero-memories {
+    letter-spacing: -1.5px;
+  }
 }
 
 @media (min-width: 1440px) {
-  .hero-content { padding: 0 3rem; }
-  .fs-hero-title { font-size: 11rem; }
+  .hero-content {
+    padding: 0 3rem;
+  }
 }

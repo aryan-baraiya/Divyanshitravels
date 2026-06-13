@@ -1,3 +1,4 @@
+import vanImg from '../assets/van.png';
 import './FullScreenHero.css';
 
 export default function FullScreenHero() {
@@ -7,9 +8,11 @@ export default function FullScreenHero() {
       <div className="hero-overlay" aria-hidden="true" role="presentation" />
       <div className="hero-content">
         <h1 className="fs-hero-title">
-          DISCOVER DESTINATIONS.
-          <br />
-          CREATE MEMORIES.
+          <span className="fs-hero-discover">DISCOVER DESTINATIONS.</span>
+          <span className="fs-hero-memories-wrapper">
+            <span className="fs-hero-memories">CREATE MEMORIES</span>
+            <img src={vanImg} className="fs-hero-van" alt="Traveling Van" />
+          </span>
         </h1>
       </div>
     </section>
