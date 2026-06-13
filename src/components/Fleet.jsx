@@ -165,9 +165,9 @@ export default function Fleet({ onSelectVehicle }) {
         </div>
 
         {/* Fleet Grid */}
-        <div className="fleet-grid">
+        <div className="fleet-grid reveal">
           {filteredFleet.map((car, idx) => (
-            <div key={car.id} className={`fleet-card reveal reveal-scale delay-${(idx % 3) + 1}`}>
+            <div key={car.id} className="fleet-card">
               <div className="fleet-img-box">
                 <img src={car.image} alt={car.name} className="fleet-img" />
                 <div className="fleet-badge">{car.type}</div>
