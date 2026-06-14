@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react';
 import './InquiryForm.css';
 
@@ -25,11 +26,11 @@ export default function InquiryForm({ selectedPackage, selectedVehicle }) {
   // Pre-fill fleet choice if selected from fleet card lists
   useEffect(() => {
     if (selectedPackage) {
-      const isCharter = selectedPackage.toLowerCase().includes('charter') || 
-                        selectedPackage.toLowerCase().includes('excursion');
-      const isTour = selectedPackage.toLowerCase().includes('tour') || 
-                     selectedPackage.toLowerCase().includes('india');
-      
+      const isCharter = selectedPackage.toLowerCase().includes('charter') ||
+        selectedPackage.toLowerCase().includes('excursion');
+      const isTour = selectedPackage.toLowerCase().includes('tour') ||
+        selectedPackage.toLowerCase().includes('india');
+
       // Allow updating form state based on external selection
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData(prev => ({
@@ -59,7 +60,7 @@ export default function InquiryForm({ selectedPackage, selectedVehicle }) {
   // Compile the WhatsApp deep link message
   const generateWhatsAppUrl = () => {
     const { name, phone, email, commuteType, institution, route, destination, vehiclePreference, groupSize, timing, message } = formData;
-    
+
     let typeLabel = 'Daily Commute';
     if (commuteType === 'tour') typeLabel = 'All India Tour';
     else if (commuteType === 'charter') typeLabel = 'Excursion Charter';
@@ -77,7 +78,7 @@ export default function InquiryForm({ selectedPackage, selectedVehicle }) {
 • Dates/Class Timings: ${timing || 'Not specified'}
 • Additional Notes: ${message || 'None'}`;
 
-    const waNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '919876543210';
+    const waNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '919424799608';
     return `https://wa.me/${waNumber}?text=${encodeURIComponent(textMessage)}`;
   };
 
@@ -94,7 +95,7 @@ export default function InquiryForm({ selectedPackage, selectedVehicle }) {
     }
 
     const payload = {
-      access_key: import.meta.env.VITE_WEB3FORMS_KEY || "", 
+      access_key: import.meta.env.VITE_WEB3FORMS_KEY || "",
       subject: `New Travel Inquiry from ${formData.name}`,
       from_name: "Divyanshi Travels Portal",
       name: formData.name,
@@ -121,7 +122,7 @@ export default function InquiryForm({ selectedPackage, selectedVehicle }) {
       });
 
       const result = await response.json();
-      
+
       if (response.status === 200 || result.success) {
         setFormStatus({ submitting: false, success: true, error: null });
         setFormData({
@@ -150,14 +151,10 @@ export default function InquiryForm({ selectedPackage, selectedVehicle }) {
     <section id="inquiry" className="inquiry-section">
       <div className="inquiry-container">
         <div className="inquiry-grid">
-          
+
           {/* Left Column: Direct Contacts */}
           <div className="inquiry-info-box reveal reveal-left">
-            <span className="section-subtitle">Get A Quote</span>
-            <h2 className="inquiry-info-title">Plan Your Transit</h2>
-            <p className="inquiry-info-desc">
-              Request a custom route quote or contact our managers directly. feasibility details provided within 2 hours.
-            </p>
+            <h2 className="inquiry-info-title">Contact Us</h2>
 
             <div className="contact-details-list">
               <div className="contact-item">
@@ -167,8 +164,20 @@ export default function InquiryForm({ selectedPackage, selectedVehicle }) {
                   </svg>
                 </div>
                 <div className="contact-text">
-                  <h4>Route Manager</h4>
-                  <p>+91 98765 43210</p>
+                  <h4>Route Manager (Calls Only)</h4>
+                  <p>+91 98269 44051</p>
+                </div>
+              </div>
+
+              <div className="contact-item">
+                <div className="contact-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.58.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.95 8.95 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 11.82a7.436 7.436 0 0 1-3.791-1.043l-.272-.162-2.82.74.753-2.75-.177-.282a7.428 7.428 0 0 1-1.137-3.98c.002-4.114 3.348-7.461 7.467-7.461a7.435 7.435 0 0 1 5.275 2.188 7.43 7.43 0 0 1 2.185 5.277c-.002 4.115-3.348 7.462-7.46 7.462m4.095-5.594c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112-.15.224-.58.73-.711.879-.13.149-.26.168-.485.056-.225-.113-.95-.35-1.81-1.117-.67-.597-1.121-1.335-1.253-1.56-.13-.225-.014-.347.099-.46.101-.101.225-.262.338-.393.112-.13.15-.224.224-.374.075-.15.038-.281-.018-.393-.057-.113-.505-1.217-.692-1.666-.181-.437-.366-.377-.504-.384a9.68 9.68 0 0 0-.429-.008c-.15 0-.393.056-.599.28-.206.225-.786.768-.786 1.87 0 1.104.804 2.17.917 2.32.113.15 1.582 2.415 3.833 3.387.536.231.954.369 1.28.473.537.171 1.026.147 1.412.09.43-.064 1.327-.542 1.514-1.037.187-.495.187-.918.13-1.006-.056-.088-.205-.13-.43-.243" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div className="contact-text">
+                  <h4>WhatsApp & Calls</h4>
+                  <p>+91 94247 99608</p>
                 </div>
               </div>
 
@@ -197,274 +206,32 @@ export default function InquiryForm({ selectedPackage, selectedVehicle }) {
                 </div>
               </div>
             </div>
-
-            <div className="inquiry-hours">
-              <span className="pulse-dot"></span>
-              <p>Active Desk: 7:00 AM – 9:00 PM</p>
-            </div>
           </div>
 
           {/* Right Column: Dynamic Form */}
           <div className="inquiry-form-box reveal reveal-right">
-            <h3 className="form-box-title">Travel Planner</h3>
-            
-            {formStatus.success ? (
-              <div className="form-success-state animated-fade-in">
-                <div className="success-icon">
-                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <h4>Inquiry Submitted!</h4>
-                <p>
-                  Thank you. Your travel requirements have been logged by our desk. 
-                  Our planning team will reach out shortly to discuss rates and feasibility.
-                </p>
-                <button 
-                  onClick={() => setFormStatus({ submitting: false, success: false, error: null })}
-                  className="reset-form-btn"
-                >
-                  Submit Another Inquiry
-                </button>
+            <div className="inquiry-form-top">
+              <h3 className="form-box-title">Contact to the guide</h3>
+              {/* <p className="inquiry-info-desc">
+                Connect with our travel experts directly on WhatsApp for instant route booking, fleet availability, and customized group rates.
+              </p> */}
+            </div>
+
+            <a
+              href={generateWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whatsapp-image-link"
+            >
+              <img
+                src="/whatsapp_logo.png"
+                alt="WhatsApp Contact"
+                className="whatsapp-bg-image"
+              />
+              <div className="whatsapp-overlay">
+                <span className="whatsapp-overlay-text">Consult on WhatsApp</span>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="inquiry-form">
-                
-                <div className="form-tabs">
-                  <button
-                    type="button"
-                    className={`form-tab-btn ${formData.commuteType === 'daily' ? 'active-tab' : ''}`}
-                    onClick={() => setFormData(prev => ({ ...prev, commuteType: 'daily' }))}
-                  >
-                    Daily Commute
-                  </button>
-                  <button
-                    type="button"
-                    className={`form-tab-btn ${formData.commuteType === 'tour' ? 'active-tab' : ''}`}
-                    onClick={() => setFormData(prev => ({ ...prev, commuteType: 'tour' }))}
-                  >
-                    All India Tour
-                  </button>
-                  <button
-                    type="button"
-                    className={`form-tab-btn ${formData.commuteType === 'charter' ? 'active-tab' : ''}`}
-                    onClick={() => setFormData(prev => ({ ...prev, commuteType: 'charter' }))}
-                  >
-                    Excursion Charter
-                  </button>
-                </div>
-
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="name">Contact Person *</label>
-                    <input 
-                      type="text" 
-                      id="name" 
-                      name="name" 
-                      required 
-                      placeholder="e.g. Principal Sharma / Rajesh Kumar" 
-                      value={formData.name}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone Number *</label>
-                    <input 
-                      type="tel" 
-                      id="phone" 
-                      name="phone" 
-                      required 
-                      placeholder="e.g. +91 98765 43210" 
-                      value={formData.phone}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
-
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="email">Email Address *</label>
-                    <input 
-                      type="email" 
-                      id="email" 
-                      name="email" 
-                      required 
-                      placeholder="e.g. admin@school.com" 
-                      value={formData.email}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="institution">
-                      {formData.commuteType === 'tour' 
-                        ? 'Family / Group Name *' 
-                        : 'School / College / Organization Name *'}
-                    </label>
-                    <input 
-                      type="text" 
-                      id="institution" 
-                      name="institution" 
-                      required
-                      placeholder={formData.commuteType === 'tour'
-                        ? 'e.g. Sharma Family / Rajesh & Party'
-                        : 'e.g. St. Paul\'s School / Apex College'} 
-                      value={formData.institution}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
-
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="route">
-                      {formData.commuteType === 'tour' 
-                        ? 'Destination / Places to Visit' 
-                        : 'Preferred Route / Pickup Area'}
-                    </label>
-                    <input 
-                      type="text" 
-                      id="route" 
-                      name="route" 
-                      placeholder={formData.commuteType === 'tour'
-                        ? 'e.g. Kerala backwaters / Udaipur Sightseeing'
-                        : 'e.g. Shastri Nagar to Sector 4'} 
-                      value={formData.route}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="destination">
-                      {formData.commuteType === 'tour' ? 'Preferred Tour Package' : 'Preferred Fleet / Service'}
-                    </label>
-                    <select 
-                      id="destination" 
-                      name="destination"
-                      value={formData.destination}
-                      onChange={handleChange}
-                    >
-                      <option value="">-- Select Option --</option>
-                      <option value="School Transport (Students & Teachers)">School Transport (Students & Teachers)</option>
-                      <option value="University Shuttle (Students & Faculty)">University Shuttle (Students & Faculty)</option>
-                      <option value="All India Family & Couple Tours">All India Family & Couple Tours</option>
-                      <option value="School & College Excursion Trips">School & College Excursions</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="vehiclePreference">Preferred Vehicle (Optional)</label>
-                    <select 
-                      id="vehiclePreference" 
-                      name="vehiclePreference"
-                      value={formData.vehiclePreference}
-                      onChange={handleChange}
-                    >
-                      <option value="">-- No preference (Any suitable) --</option>
-                      <option value="Maruti Swift Dzire">Maruti Swift Dzire (Sedan)</option>
-                      <option value="Honda Amaze">Honda Amaze (Sedan)</option>
-                      <option value="Toyota Innova Crysta">Toyota Innova Crysta (Premium SUV)</option>
-                      <option value="Mahindra Scorpio">Mahindra Scorpio (Rugged SUV)</option>
-                      <option value="MG Hector">MG Hector (Luxury SUV)</option>
-                      <option value="Maruti Ertiga">Maruti Ertiga (Affordable MUV)</option>
-                      <option value="Maruti Eeco">Maruti Eeco (Budget Commuter)</option>
-                      <option value="18 Seater Mini Bus">18 Seater Mini Bus (Bus)</option>
-                      <option value="26 Seater Luxury Bus">26 Seater Luxury Bus (Bus)</option>
-                    </select>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="groupSize">
-                      {formData.commuteType === 'tour' 
-                        ? 'Number of Passengers *' 
-                        : 'Approx. Number of Commuters *'}
-                    </label>
-                    <input 
-                      type="number" 
-                      id="groupSize" 
-                      name="groupSize" 
-                      required 
-                      min="1" 
-                      placeholder={formData.commuteType === 'tour' ? 'e.g. 4 people' : 'e.g. 50 staff/students'} 
-                      value={formData.groupSize}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
-
-                <div className="form-row">
-                  <div className="form-group" style={{ flex: '1 1 100%' }}>
-                    <label htmlFor="timing">
-                      {formData.commuteType === 'tour' 
-                        ? 'Travel Dates / Duration' 
-                        : 'Class / Commute Timings'}
-                    </label>
-                    <input 
-                      type="text" 
-                      id="timing" 
-                      name="timing" 
-                      placeholder={formData.commuteType === 'tour'
-                        ? 'e.g. Oct 15 - Oct 22 / 5 Days'
-                        : 'e.g. 7:30 AM - 2:00 PM'} 
-                      value={formData.timing}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="message">
-                    {formData.commuteType === 'tour'
-                      ? 'Custom itinerary request or special preferences'
-                      : 'Route requirements / Specific safety requests'}
-                  </label>
-                  <textarea 
-                    id="message" 
-                    name="message" 
-                    rows="3" 
-                    placeholder={formData.commuteType === 'tour'
-                      ? 'Enter any specific sightseeing preferences, hotel standards, food requirements, or special driver instructions.'
-                      : 'Enter details like boarding points, specific stop requests, female attendant requirement, RTO check logs, etc.'}
-                    value={formData.message}
-                    onChange={handleChange}
-                  ></textarea>
-                </div>
-
-                {formStatus.error && (
-                  <div className="form-error-msg">
-                    Error: {formStatus.error}. Note: If testing locally, Web3Forms requires a valid access key. 
-                    You can still use the "Chat on WhatsApp" button below to inquire instantly.
-                  </div>
-                )}
-
-                {/* Submit Actions */}
-                <div className="form-actions-box">
-                  <button 
-                    type="submit" 
-                    disabled={formStatus.submitting}
-                    className="submit-email-btn"
-                  >
-                    {formStatus.submitting ? 'Submitting Request...' : 'Send Travel Request'}
-                  </button>
-                  
-                  <div className="form-action-divider">
-                    <span>or</span>
-                  </div>
-
-                  <a 
-                    href={generateWhatsAppUrl()} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="submit-whatsapp-btn"
-                  >
-                    <svg className="wa-icon" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436.002 9.858-4.42 9.86-9.86.001-2.63-1.019-5.101-2.87-6.956C16.61 1.934 14.136.915 11.5.914 6.062.914 1.64 5.338 1.637 10.78c-.001 1.765.467 3.488 1.355 5.017l-.989 3.612 3.712-.973zm12.115-6.757c-.301-.15-1.78-.879-2.056-.979-.275-.1-.475-.15-.675.15-.2.3-.775.979-.95 1.179-.175.2-.35.225-.65.075-.301-.15-1.267-.467-2.414-1.492-.893-.797-1.496-1.782-1.672-2.082-.175-.3-.019-.462.13-.611.135-.134.301-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.588-.493-.508-.675-.517-.175-.008-.375-.01-.575-.01-.2 0-.525.075-.8 1.075-.275 1-.95 2.45-.95 2.45s-.1 1.767 1.025 2.892c.625.625 1.2 1.15 1.9 1.6.7.45 1.3.8 2.05.9 1.125.15 2.25.1 3.25-.05.8-.12 1.625-.67 1.825-1.27.2-.6.2-1.12.15-1.22-.05-.1-.2-.15-.5-.3z"/>
-                    </svg>
-                    Consult on WhatsApp
-                  </a>
-                </div>
-
-              </form>
-            )}
+            </a>
           </div>
 
         </div>
