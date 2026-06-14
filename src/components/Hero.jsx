@@ -24,7 +24,7 @@ export default function Hero() {
               </a>
               <a
                 href={
-                  `https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER || '919876543210'}?text=${encodeURIComponent(
+                  `https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER || '919424799608'}?text=${encodeURIComponent(
                     'Hello Divyanshi Travels, I am interested in arranging daily passenger transport. Please guide me on routes and fleet.'
                   )}`
                 }

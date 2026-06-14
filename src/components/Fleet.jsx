@@ -22,7 +22,7 @@ const FLEET_DATA = [
     ac: 'Fully AC',
     type: 'Luxury Sedan',
     description: 'Generous legroom with a modern cabin. Perfect for small families.',
-    image: '/udaipur_hero.png'
+    image: '/hondamage.png'
   },
   {
     id: 'innova-crysta',
@@ -55,7 +55,7 @@ const FLEET_DATA = [
     ac: 'Fully AC',
     type: 'Luxury SUV',
     description: 'Panoramic cabin with smart layout. Premium executive choice.',
-    image: '/udaipur_hero.png'
+    image: '/mghector.png'
   },
   {
     id: 'ertiga',
@@ -66,7 +66,7 @@ const FLEET_DATA = [
     ac: 'Double AC Vent',
     type: 'Affordable MUV',
     description: 'Practical family commuter with flexible seating. Economical choice.',
-    image: '/coaching_van.png'
+    image: '/Ertiga.png'
   },
   {
     id: 'eeco',

@@ -7,7 +7,7 @@ const PACKAGES_DATA = [
     title: 'School Transport Route',
     category: 'commute',
     duration: 'Daily Route',
-    image: '/school_bus_transit.png',
+    image: '/school_bus.png',
     description: 'RTO-compliant 50-seater buses. Optimized student/staff routes with CCTV and wardens.',
     highlights: ['Daily student & teacher pickup', 'CCTV & live GPS tracking', 'Verified safety wardens'],
     inclusions: ['Speed Governor', 'CCTV Recording', 'Panic Alarm System', 'Parent SMS Alerts']
@@ -22,22 +22,22 @@ const PACKAGES_DATA = [
     highlights: ['Shift-aligned schedules', 'Staff & student route sync', 'Comfortable high-back seats'],
     inclusions: ['32-Seater AC Fleet', 'Fitness Audited Bus', 'GPS Route Sync', 'On-time Guarantee']
   },
-  {
-    id: 'all-india-tour',
-    title: 'All India Tours',
-    category: 'tour',
-    duration: 'Holiday Tour',
-    image: '/kerala_houseboat.png',
-    description: 'Custom private excursions. Personal itinerary planning, premium stays, and state permits.',
-    highlights: ['Custom family & couple packages', 'Luxury SUVs & private coach', 'Handpicked hotel bookings'],
-    inclusions: ['Customized Itinerary', 'Local Guide Booking', 'Interstate Tolls Covered', '24/7 Helpline Support']
-  },
+  // {
+  //   id: 'all-india-tour',
+  //   title: 'All India Tours',
+  //   category: 'tour',
+  //   duration: 'Holiday Tour',
+  //   image: '/kerala_houseboat.png',
+  //   description: 'Custom private excursions. Personal itinerary planning, premium stays, and state permits.',
+  //   highlights: ['Custom family & couple packages', 'Luxury SUVs & private coach', 'Handpicked hotel bookings'],
+  //   inclusions: ['Customized Itinerary', 'Local Guide Booking', 'Interstate Tolls Covered', '24/7 Helpline Support']
+  // },
   {
     id: 'excursion-charter',
     title: 'Excursion Charter',
     category: 'charter',
     duration: 'Group Charter',
-    image: '/charter_coach.png',
+    image: '/school_bus_transit.png',
     description: 'Excursion mini-coaches and vans for student picnics, industrial visits, and travel camps.',
     highlights: ['Academic excursions & picnics', 'Volvo luxury 53-seater coach', 'Full group insurance included'],
     inclusions: ['Volvo AC Coach', 'Experienced Tour Escort', 'RTO permits handled', 'Coordinator Free Slots']
@@ -86,12 +86,12 @@ export default function Packages({ onSelectPackage }) {
           >
             Daily Commutes
           </button>
-          <button 
+          {/* <button 
             className={`filter-btn ${activeFilter === 'tour' ? 'filter-active' : ''}`}
             onClick={() => setActiveFilter('tour')}
           >
             All India Tours
-          </button>
+          </button> */}
           <button 
             className={`filter-btn ${activeFilter === 'charter' ? 'filter-active' : ''}`}
             onClick={() => setActiveFilter('charter')}

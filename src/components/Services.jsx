@@ -35,7 +35,7 @@ export default function Services() {
               <p className="service-description-text">
                 Safe, scheduled daily routes for school students and staff with absolute safety protocols.
               </p>
-              <ul className="service-features">
+              {/* <ul className="service-features">
                 <li>
                   <svg className="check-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -60,7 +60,7 @@ export default function Services() {
                   </svg>
                   <span>Optimized route logistics</span>
                 </li>
-              </ul>
+              </ul> */}
               <a href="#inquiry" className="service-btn">
                 Inquire Now
               </a>
@@ -86,7 +86,7 @@ export default function Services() {
               <p className="service-description-text">
                 Timetable-aligned shuttle networks connecting residential areas directly to college campuses.
               </p>
-              <ul className="service-features">
+              {/* <ul className="service-features">
                 <li>
                   <svg className="check-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -111,7 +111,7 @@ export default function Services() {
                   </svg>
                   <span>24/7 dedicated transit desk</span>
                 </li>
-              </ul>
+              </ul> */}
               <a href="#inquiry" className="service-btn">
                 Inquire Now
               </a>
@@ -137,7 +137,7 @@ export default function Services() {
               <p className="service-description-text">
                 Bespoke tour packages with luxury vehicle support and hotel stays across tourist destinations.
               </p>
-              <ul className="service-features">
+              {/* <ul className="service-features">
                 <li>
                   <svg className="check-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -162,7 +162,7 @@ export default function Services() {
                   </svg>
                   <span>24/7 central tourist helpline</span>
                 </li>
-              </ul>
+              </ul> */}
               <a href="#inquiry" className="service-btn">
                 Inquire Now
               </a>
@@ -188,7 +188,7 @@ export default function Services() {
               <p className="service-description-text">
                 Fully coordinated tours, visits, and field trips for schools, universities, and coaching hubs.
               </p>
-              <ul className="service-features">
+              {/* <ul className="service-features">
                 <li>
                   <svg className="check-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -213,7 +213,7 @@ export default function Services() {
                   </svg>
                   <span>Permits & toll support</span>
                 </li>
-              </ul>
+              </ul> */}
               <a href="#inquiry" className="service-btn">
                 Inquire Now
               </a>
@@ -239,7 +239,7 @@ export default function Services() {
               <p className="service-description-text">
                 Premium wedding transport for bride, groom, and guests with clean, comfortable, and timely coordination.
               </p>
-              <ul className="service-features">
+              {/* <ul className="service-features">
                 <li>
                   <svg className="check-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -264,7 +264,7 @@ export default function Services() {
                   </svg>
                   <span>Well-maintained, spotless vehicles</span>
                 </li>
-              </ul>
+              </ul> */}
               <a href="#inquiry" className="service-btn">
                 Inquire Now
               </a>
