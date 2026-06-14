@@ -101,9 +101,9 @@ export default function Packages({ onSelectPackage }) {
         </div>
 
         {/* Packages Grid */}
-        <div className="packages-grid">
+        <div className="packages-grid reveal">
           {filteredPackages.map((pkg, idx) => (
-            <div key={pkg.id} className={`package-card reveal reveal-scale delay-${(idx % 4) + 1}`}>
+            <div key={pkg.id} className="package-card">
               <div className="package-img-box">
                 <img src={pkg.image} alt={pkg.title} className="package-img" />
                 <div className="package-duration">{pkg.duration}</div>

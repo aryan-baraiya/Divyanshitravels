@@ -1,7 +1,9 @@
-// React import not required with automatic JSX runtime
+import { useState } from 'react';
 import './Services.css';
 
 export default function Services() {
+  const [activeIndex, setActiveIndex] = useState(2); // Default to middle card (All India Tours)
+
   return (
     <section id="services" className="services-section">
       <div className="services-container">
@@ -13,9 +15,13 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="services-grid">
+        <div className="services-accordion reveal">
           {/* Card 1: School Transport */}
-          <div className="service-card reveal delay-1">
+          <div 
+            className={`service-card ${activeIndex === 0 ? 'expanded' : ''}`}
+            onMouseEnter={() => setActiveIndex(0)}
+            onClick={() => setActiveIndex(0)}
+          >
             <div className="service-img-wrapper">
               <img 
                 src="/school_bus_transit.png" 
@@ -62,7 +68,11 @@ export default function Services() {
           </div>
 
           {/* Card 2: College & University Transport */}
-          <div className="service-card reveal delay-2">
+          <div 
+            className={`service-card ${activeIndex === 1 ? 'expanded' : ''}`}
+            onMouseEnter={() => setActiveIndex(1)}
+            onClick={() => setActiveIndex(1)}
+          >
             <div className="service-img-wrapper">
               <img 
                 src="/college_shuttle.png" 
@@ -109,7 +119,11 @@ export default function Services() {
           </div>
 
           {/* Card 3: All India Tours */}
-          <div className="service-card reveal delay-3">
+          <div 
+            className={`service-card ${activeIndex === 2 ? 'expanded' : ''}`}
+            onMouseEnter={() => setActiveIndex(2)}
+            onClick={() => setActiveIndex(2)}
+          >
             <div className="service-img-wrapper">
               <img 
                 src="/kerala_houseboat.png" 
@@ -156,7 +170,11 @@ export default function Services() {
           </div>
 
           {/* Card 4: Trips for School Colleges */}
-          <div className="service-card reveal delay-4">
+          <div 
+            className={`service-card ${activeIndex === 3 ? 'expanded' : ''}`}
+            onMouseEnter={() => setActiveIndex(3)}
+            onClick={() => setActiveIndex(3)}
+          >
             <div className="service-img-wrapper">
               <img 
                 src="/student_travel.png" 
@@ -203,7 +221,11 @@ export default function Services() {
           </div>
 
           {/* Card 5: Wedding Transport */}
-          <div className="service-card reveal delay-5">
+          <div 
+            className={`service-card ${activeIndex === 4 ? 'expanded' : ''}`}
+            onMouseEnter={() => setActiveIndex(4)}
+            onClick={() => setActiveIndex(4)}
+          >
             <div className="service-img-wrapper">
               <img 
                 src="/innova_crysta.png" 

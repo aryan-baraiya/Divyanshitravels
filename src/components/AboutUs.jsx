@@ -30,7 +30,7 @@ export default function AboutUs() {
         <div className="travel-promo-visual reveal reveal-right" aria-hidden="true">
           <div className="travel-promo-frame">
             <img
-              src="/school_bus_transit.png"
+              src="/explore.jpg"
               alt="Divyanshi Travels coach on a mountain road"
               className="travel-promo-image"
             />
