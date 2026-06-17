@@ -218,3 +218,25 @@
     height: var(--card-img-height-desktop);
   }
 }
+
+/* Mobile grid layout for Fleet tab filters */
+@media screen and (max-width: 767px) {
+  .fleet-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .fleet-tabs .fleet-tab-btn:first-child {
+    grid-column: span 2;
+  }
+
+  .fleet-tab-btn {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+

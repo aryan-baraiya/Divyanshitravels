@@ -64,9 +64,9 @@
 }
 
 .logo-main {
-  font-family: 'Bebas Neue', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Bebas Neue", "Arial Narrow", Arial, sans-serif;
   font-weight: 400;
-  font-size: clamp(2.2rem, 2.85vw, 3.2rem);
+  font-size: clamp(1.8rem, 6vw, 3.2rem);
   letter-spacing: 0.02em;
   color: var(--color-white);
   display: inline-block;
@@ -88,7 +88,7 @@
   display: none;
   align-items: center;
   color: var(--color-white);
-  font-family: 'Bebas Neue', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Bebas Neue", "Arial Narrow", Arial, sans-serif;
   font-size: clamp(1.35rem, 1.65vw, 1.85rem);
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -171,7 +171,7 @@
 }
 
 .navbar-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -199,7 +199,7 @@
   color: var(--color-white);
   padding: 0;
   border-radius: 0;
-  font-family: 'Bebas Neue', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Bebas Neue", "Arial Narrow", Arial, sans-serif;
   font-weight: 400;
   font-size: clamp(1.5rem, 1.8vw, 2rem);
   letter-spacing: 0.08em;
@@ -218,6 +218,10 @@
 
   .navbar-toggle {
     display: flex;
+  }
+
+  .navbar-cta-btn {
+    display: none;
   }
 }
 
@@ -247,7 +251,17 @@
     display: none;
     font-weight: 600;
     font-size: 1.1rem;
+  }
+
   .navbar-right {
+    color: var(--color-white);
+    font-family: "Bebas Neue", "Arial Narrow", Arial, sans-serif;
+    font-size: clamp(1.35rem, 1.65vw, 1.85rem);
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: var(--transition-fast);
     gap: 1.8rem;
   }
 }
