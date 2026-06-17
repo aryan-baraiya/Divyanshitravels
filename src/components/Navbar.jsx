@@ -34,7 +34,7 @@ export default function Navbar() {
             Services
           </a>
 
-          <button 
+          <button
             className={`navbar-toggle ${isMobileMenuOpen ? 'toggle-active' : ''}`}
             onClick={toggleMobileMenu}
             aria-label="Toggle navigation menu"
@@ -69,7 +69,7 @@ export default function Navbar() {
 
         <div className="navbar-right">
           <a href="#inquiry" className="navbar-cta-btn" onClick={closeMobileMenu}>
-            Inquire Now
+            Inquiry
           </a>
         </div>
       </div>

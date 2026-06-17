@@ -105,6 +105,15 @@
   text-align: left;
 }
 
+.footer-col ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  display: block;
+  width: 100%;
+}
+
 .footer-col ul li a {
   font-family: var(--font-body);
   font-size: 0.9rem;

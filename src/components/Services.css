@@ -273,4 +273,16 @@
   }
 }
 
+/* Mobile-specific collapsed card visual tuning */
+@media screen and (max-width: 767px) {
+  .service-card:not(.expanded) .service-info-wrapper {
+    padding: 0.5rem;
+  }
+
+  .service-card:not(.expanded) h3 {
+    font-size: 1rem;
+  }
+}
+
+
 
