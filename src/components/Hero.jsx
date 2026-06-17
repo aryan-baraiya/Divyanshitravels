@@ -16,7 +16,7 @@ export default function Hero() {
               <span>Smart Transit.</span>
             </h1>
             <p className="hero-subtitle">
-              Udaipur's premium daily transport and tours. GPS-tracked, CCTV-secured school commutes, institutional loops, and custom All India tours.
+              Gwalior's premium daily transport and tours. GPS-tracked, CCTV-secured school commutes, institutional loops, and custom All India tours.
             </p>
             <div className="hero-actions">
               <a href="#packages" className="hero-btn-primary">

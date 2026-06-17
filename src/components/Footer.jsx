@@ -67,9 +67,9 @@ export default function Footer() {
           <div className="footer-col contact-col">
             <h3>Divyanshi Office</h3>
             <p className="contact-address">
-              102, Shanti Complex,<br />
-              Near City Palace, Udaipur,<br />
-              Rajasthan, India - 313001
+              57, New Nehru Colony Thatipur,<br />
+              Near Model School, Gwalior,<br />
+              Madhya Pradesh, India - 474001
             </p>
             <p className="contact-info-row">
               <strong>Phone:</strong> +91 98765 43210
@@ -78,7 +78,7 @@ export default function Footer() {
               <strong>Email:</strong> plan@divyanshitravels.com
             </p>
             <p className="contact-info-row">
-              <strong>Govt Reg No:</strong> RJ-UD-2014-9844
+              <strong>Govt Reg No:</strong> MP-GW-2014-9844
             </p>
           </div>
 

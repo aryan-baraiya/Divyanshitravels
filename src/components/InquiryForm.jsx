@@ -202,7 +202,7 @@ export default function InquiryForm({ selectedPackage, selectedVehicle }) {
                 </div>
                 <div className="contact-text">
                   <h4>Office</h4>
-                  <p>102, Shanti Complex, Udaipur, Rajasthan - 313001</p>
+                  <p>57, New Nehru Colony Thatipur, Near Model School, Gwalior, Madhya Pradesh - 474001</p>
                 </div>
               </div>
             </div>
