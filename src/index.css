@@ -351,3 +351,13 @@ textarea:focus-visible {
     padding: 8rem 4rem;
   }
 }
+
+/* Mobile and tablet viewports: bypass scroll reveal animations */
+@media screen and (max-width: 1024px) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
